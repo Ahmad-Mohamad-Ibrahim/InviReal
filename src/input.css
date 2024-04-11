@@ -1,0 +1,121 @@
+/*
+color pallete
+    primary: #0C1929
+    dark: #040b15 
+    accent: #DDF2FF
+    complementary: #DCA11D 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+    @apply bg-primary-400 shadow-inner px-8 py-4 uppercase text-white font-bold rounded-xl max-w-52 mt-10 transition ease-out duration-300 hover:bg-primary-200 hover:cursor-pointer;
+}
+
+.button-outline {
+    @apply bg-transparent border border-primary-400 px-8 py-4 uppercase text-primary-400 font-bold rounded-xl max-w-52 mt-10 transition ease-out duration-300 hover:bg-primary-400 hover:cursor-pointer hover:text-white;
+}
+
+.hero {
+    -webkit-background-size: cover;
+}
+
+.nav-active {
+    @apply bg-primary-600;
+}
+
+.nav-item {
+    @apply px-8 py-2 rounded-xl hover:bg-primary-600;
+}
+
+.nav {
+    --translate-y-neg: -56px;
+    --translate-y-start: 0px;
+    --blur-amount: 10px;
+}
+
+.nav.nav-show {
+    animation: showNav 0.3s linear forwards;
+}
+
+.nav.nav-hide {
+    animation: hideNav 0.3s linear forwards;
+}
+
+@keyframes showNav {
+    from {
+        transform: translateY(var(--translate-y-neg));
+        filter: blur(var(--blur-amount));
+    }
+
+    to {
+        transform: translateY(var(--translate-y-start));
+        filter: blur(0);
+
+
+    }
+
+}
+
+@keyframes hideNav {
+    from {
+        transform: translateY(var(--translate-y-start));
+        filter: blur(0);
+    }
+
+    to {
+        transform: translateY(var(--translate-y-neg));
+        filter: blur(var(--blur-amount));
+
+
+    }
+
+}
+
+
+/* Residents Section */
+.slider {
+    @apply mt-2 bg-primary-100 min-h-72 lg:min-h-80 w-[100%] lg:w-[56%] relative top-0 overflow-hidden;
+}
+
+.slider-list {
+    @apply absolute h-[100%] w-[80%] top-[50%] lg:top-0 left-[60%] transition duration-700 flex gap-6 items-end text-white;
+}
+
+.slider-item {
+    @apply w-[500px] h-[300px] flex-shrink-0 relative shadow-2xl rounded-lg overflow-hidden;
+}
+
+.slider-image {
+    @apply w-[100%] h-[100%] object-cover z-0;
+}
+
+.slider-content {
+    @apply absolute top-24 bottom-4 right-4 z-50;
+}
+
+.slider-heading {
+    @apply font-bold text-2xl;
+}
+
+.slider-button {
+    @apply text-white content-center my-4 z-50 transition duration-300 hover:cursor-pointer hover:bg-white hover:text-dark text-center font-mono font-bold min-w-[40px] min-h-[40px] rounded-full bg-dark;
+}
+
+.card {
+    @apply bg-primary-100 overflow-hidden p-8 rounded-md;
+}
+
+.review-text {
+    @apply  max-h-[60%] overflow-hidden overflow-ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.line {
+    @apply h-[2px] w-[100%] inline-block bg-complementary;
+}
